@@ -9,6 +9,6 @@ class TextCounter extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final int valueCounter = ref.watch(valCounter);
-    return Text(valueCounter.toString());
+    return Center(child: Text(valueCounter.toString()));
   }
 }

@@ -1,14 +1,14 @@
 import 'package:coba_riverpod/models/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// class Counter extends StateNotifier<int> {
-//   static const _initValue = 0;
-//   Counter() : super(_initValue);
+class Counter extends StateNotifier<int> {
+  static const _initValue = 0;
+  Counter() : super(_initValue);
 
-//   void increment() {
-//     state++;
-//   }
-// }
+  void increment() {
+    state++;
+  }
+}
 
 // final counterProvider = StateNotifierProvider<Counter, int>(
 //   (_) => Counter(),
@@ -25,7 +25,7 @@ final products = <Product>[
   const Product(name: "Baju", price: 1000),
 ];
 
-final productsProvider = Provider<List<Product>>(
+final productsProvider = StateProvider<List<Product>>(
   (ref) {
     final productSortP = ref.watch(productSortTypeProvider);
     switch (productSortP) {
@@ -40,5 +40,5 @@ final productsProvider = Provider<List<Product>>(
 );
 
 final productSortTypeProvider = StateProvider<ProductSortType>(
-  (_) => ProductSortType.name,
-);
+    (_) => ProductSortType.name,
+    name: "product-sort-type");

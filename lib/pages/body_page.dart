@@ -8,7 +8,7 @@ class BodyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final productsP = ref.watch(productsProvider);
+    final productsP = ref.watch(productsProvider.notifier).state;
     return ListView.builder(
       itemCount: productsP.length,
       itemBuilder: (_, idx) {

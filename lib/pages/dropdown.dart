@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../controllers/counter.dart';
 
-class BodyContent extends ConsumerWidget {
-  const BodyContent({super.key});
+class MyDropDown extends ConsumerWidget {
+  const MyDropDown({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,7 +32,6 @@ class BodyContent extends ConsumerWidget {
         ref.read(productSortTypeProvider.notifier).update(
               (state) => state = val!,
             );
-        log(ref.read(productSortTypeProvider.notifier).state.name);
       },
     );
   }
