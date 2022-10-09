@@ -1,3 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 class Product {
   final String name;
   final int price;
@@ -7,3 +9,4 @@ class Product {
     required this.price,
   });
 }
+
